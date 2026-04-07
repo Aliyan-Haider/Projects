@@ -39,11 +39,11 @@ passcode_input.type_keys(passcode)
 join_2.click_input()
 
 # connects to the fourth window. the window can be toggled to not appear, but this program assumes it always appears.
-meeting_room = Application(backend="uia").connect(class_name="VideoPreviewWndClass", timeout=5)
+preview_room = Application(backend="uia").connect(class_name="VideoPreviewWndClass", timeout=5)
 
 # this variable stores the title for the fourth window. the title is not hardcoded for this window.
-window_4_title = meeting_room.windows()[0].window_text()
+window_4_title = preview_room.windows()[0].window_text()
 
-join_3 = meeting_room.window(best_match=window_4_title).child_window(title="Join", control_type="Button")
+join_3 = preview_room.window(best_match=window_4_title).child_window(title="Join", control_type="Button")
 
 join_3.click_input()
