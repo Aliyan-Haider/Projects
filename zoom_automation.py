@@ -28,12 +28,12 @@ audio.click_input()
 video.click_input()
 join.click_input()
 
-# onnects to the third window. here, you enter your passcode.
+# connects to the third window. here, you enter your passcode.
 passcode_dialogue = Application(backend="uia").connect(title="Enter meeting passcode", timeout=5)
 
 passcode_input = passcode_dialogue.EnterMeetngPasscode.child_window(title="Meeting passcode", control_type="Edit")
 join_2 = passcode_dialogue.EnterMeetingPasscode.child_window(title="Join meeting", control_type="Button")
 
-# the line directly below enter your passcode into the passcod text box.
+# the line directly below enters your passcode into the passcode text box.
 passcode_input.type_keys(passcode)
 join_2.click_input()
